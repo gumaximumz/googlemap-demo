@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<table id="datatable_demo" class="display" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Extn.</th>
+            <th>Start date</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+</table>
+
+@*<link href="~/Content/DataTables/css/jquery.dataTables.css" rel="stylesheet" />*@
+
+@section css{
+        @Styles.Render("~/Content/DataTables/css")
+    }
+
+@section scripts{
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/DataTables")
+    @Scripts.Render("~/bundles/dataTablesDemo")
+    <script type="text/javascript">
+        "strict mode"
+        let demo = null;
+        $(document).ready(() => {
+            demo = new DatatableDemo();
+            demo.init();
+        })
+    </script>
+}
